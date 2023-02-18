@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+
+    <div class="container">
+      <input type="texto" class="txtb" placeholder="Adicionar Tarefa">
+      <div class="ncomplet">
+        <h3>Não Completado</h3>
+      </div>
+
+      <div class="complet">
+        <h3>Completado 👍</h3>
+      </div>
+    </div>
+
+
+    <script type="text/javascript">
+      $(".txtb").on("keyup",function(e){
+        //13 É A TECLA ENTER IMBECIL
+        if(e.keyCode == 13 && $(".txtb").val() != "")
+        {
+          var task = $("<div class='task'></div>").text($(".txtb").val());
+          var del = $("<i class='fas fa-trash-alt'></i>").click(function(){
+            var p = $(this).parent();
+            p.fadeOut(function(){
+              p.remove();
+            });
+          });
+
+          var check = $("<i class='fas fa-check'></i>").click(function(){
+            var p = $(this).parent();
+            p.fadeOut(function(){
+              $(".complet").append(p);
+              p.fadeIn();
+            });
+            $(this).remove();
+          });
+
+          task.append(del,check);
+          $(".ncomplet").append(task);
+            //pra limpar o input
+          $(".txtb").val("");
+        }
+      });
+    </script>
+
+  </body>
+</html>
