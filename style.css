@@ -1,51 +1,73 @@
-*{
-  margin: 0;
-  padding: 0;
-  font-family: "montserrat",sans-serif;
-  box-sizing: border-box;
+body {
+    font-family: Poppins, sans-serif;
+    background: rgb(178,231,232);
+    background: linear-gradient(90deg, rgba(178,231,232,1) 0%, rgba(48,77,99,1) 100%);
 }
 
-body{
-  background-image:url("bg.png");
-  background-size: cover;
+.header img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+form {
+    margin: 20px auto;
+    width: 500px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-
-.container{
-  max-width: 800px;
-  margin: auto;
-  padding: 10px;
+input[type=text], input[type=date] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.txtb{
-  width: 100%;
-  border: none;
-  border-bottom: 2px solid #ffffff;
-  background: none;
-  padding: 10px;
-  outline: none;
-  font-size: 18px;
+input[type=submit], input[type=reset] {
+    padding: 10px 20px;
+    background-color: #8FB9AA;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
 }
 
-h3{
-  margin: 10px 0;
+input[type=submit]:hover, input[type=reset]:hover {
+    background-color: #555;
 }
 
-.task{
-  width: 100%;
-  background: rgba(255, 255, 255, 0.5);
-  padding: 18px;
-  margin: 6px 0;
-  overflow: hidden;
+table {
+    margin: 20px auto;
+    width: 500px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
-.task i{
-  float: right;
-  margin-left: 20px;
-  cursor: pointer;
+th {
+    background-color: #8FB9AA;
+    color: #fff;
+    padding: 10px;
 }
 
-.complet .task{
-  background: rgba(0,0,0,.5);
-  color: #fff;
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
 }
+
+.task-done {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.task-not-done {
+    color: #333;
+}
+

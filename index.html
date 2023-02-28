@@ -1,55 +1,49 @@
 <!DOCTYPE html>
-<html lang="br" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  </head>
-  <body>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Task Manager 👍</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="header">
+		<img src="logomini.png" alt="logo" />
+	</div>
+<!-- coleta dos inputs-->
+	<form>
+		<label for="task">Task:</label>
+		<input type="text" id="task" name="task" required>
+		
+		<label for="task">Description:</label>
+		<input type="text" id="description" name="description" required>
+		
+		<label for="date">Expiring Date:</label>
+		<input type="date" id="date" name="date" required>
+		
+		<input type="submit" value="Add Task">
+		<input type="reset" value="Reset">
+	</form>
+	
+	<table>
+		<thead>
+			<tr>
+				<th>Task</th>
+				<th>Expiring Date</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody id="task-list">
+		</tbody>
+	</table>
 
-    <div class="container">
-      <input type="texto" class="txtb" placeholder="Adicionar Tarefa">
-      <div class="ncomplet">
-        <h3>Não Completado</h3>
-      </div>
-
-      <div class="complet">
-        <h3>Completado 👍</h3>
-      </div>
-    </div>
-
-
-    <script type="text/javascript">
-      $(".txtb").on("keyup",function(e){
-        //13 É A TECLA ENTER IMBECIL
-        if(e.keyCode == 13 && $(".txtb").val() != "")
-        {
-          var task = $("<div class='task'></div>").text($(".txtb").val());
-          var del = $("<i class='fas fa-trash-alt'></i>").click(function(){
-            var p = $(this).parent();
-            p.fadeOut(function(){
-              p.remove();
-            });
-          });
-
-          var check = $("<i class='fas fa-check'></i>").click(function(){
-            var p = $(this).parent();
-            p.fadeOut(function(){
-              $(".complet").append(p);
-              p.fadeIn();
-            });
-            $(this).remove();
-          });
-
-          task.append(del,check);
-          $(".ncomplet").append(task);
-            //pra limpar o input
-          $(".txtb").val("");
-        }
-      });
+<!-- teste
+<script>
+		const form = document.querySelector('form');
+		const table = document.querySelector('table');
+		const taskList = document.getElementById('task-list');
+		
+		form.addEventListener('submit', function(event) {
+			event.preventDefault();
+			
     </script>
-
-  </body>
-</html>
+-->	
